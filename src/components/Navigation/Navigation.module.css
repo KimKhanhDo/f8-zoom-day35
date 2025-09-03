@@ -1,0 +1,65 @@
+/* Layout container */
+.nav-list {
+    --bg: rgb(55, 71, 95);
+    --border: rgba(148, 163, 184, 0.15);
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --ring: 99 102 241;
+    --shadow: 0, 0, 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 20px 14px;
+    list-style: none;
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background: var(--bg);
+    box-shadow: 0 6px 18px rgba(var(--shadow), 0.2);
+    overflow: hidden;
+    scrollbar-width: none;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+}
+
+/* Button pill */
+.link-btn {
+    --pill-bg: rgba(66, 82, 104, 0.9);
+    --pill-hover: rgba(71, 85, 105, 0.95);
+    --pill-active: #455485;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    text-decoration: none;
+    color: var(--text);
+
+    padding: 10px 14px;
+    border-radius: 999px;
+
+    background: var(--pill-bg);
+    box-shadow: 0 4px 12px rgba(var(--shadow), 0.1);
+    transition: all 0.1 ease;
+}
+
+/* Hover / focus */
+.link-btn:hover {
+    background: var(--pill-hover);
+    box-shadow: 0 10px 22px rgba(var(--shadow), 0.3);
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+.link-btn[aria-current='page'],
+.active {
+    background: var(--pill-active);
+    color: #f9fafb;
+}

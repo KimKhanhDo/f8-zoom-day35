@@ -1,0 +1,180 @@
+.wrapper {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #6b7280;
+    --primary: #2563eb;
+    --danger: #ef4444;
+    --ring: rgba(37, 99, 235, 0.35);
+    --radius: 14px;
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1f2a43 0%, #1e293b 100%);
+    color: var(--text);
+}
+
+.todo {
+    width: min(680px, 92vw);
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.todo__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.todo__title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+.todo__form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.todo__input {
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    outline: none;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.todo__input:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 1px var(--ring);
+}
+
+.todo__add-btn {
+    height: 44px;
+    padding: 0 18px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.04s, filter 0.2s, background 0.2s;
+}
+
+.todo__add-btn:active {
+    transform: translateY(1px);
+}
+
+.todo__add-btn:hover {
+    filter: brightness(1.05);
+}
+
+.todo__empty {
+    display: block;
+    text-align: center;
+    padding: 18px 14px;
+    color: var(--muted);
+    background: #f9fafb;
+    border: 1px dashed #e5e7eb;
+    border-radius: 12px;
+    margin: 8px 0 4px;
+    font-size: 1.6rem;
+}
+
+.todo__list {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+/* Item */
+.todo__item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+}
+
+/* Custom checkbox */
+.todo__checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.todo__text {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* Gạch ngang khi checkbox được tick */
+.todo__checkbox:checked + .todo__text {
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.todo__delete-btn {
+    border: none;
+    background: #fee2e2;
+    color: var(--danger);
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.04s, filter 0.2s;
+    font-size: 1.4rem;
+}
+
+.todo__delete-btn:hover {
+    filter: brightness(0.98);
+}
+
+.todo__delete-btn:active {
+    transform: translateY(1px);
+}
+
+.todo__stats {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #eef1f5;
+    color: #374151;
+    font-size: 1.4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.stat {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 1.4rem;
+}

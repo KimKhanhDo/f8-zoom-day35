@@ -1,0 +1,110 @@
+.btn {
+    position: relative;
+    display: inline-flex;
+    gap: 6px;
+
+    background: #e5e7eb;
+    color: #111827;
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+    transition: opacity 0.15s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Ẩn label khi loading */
+.loading .label {
+    visibility: hidden;
+}
+
+/* Hiện spinner khi loading */
+.loading .spinner {
+    display: inline-block;
+}
+
+.spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: btn-spin 0.8s linear infinite;
+}
+
+@keyframes btn-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spinner {
+        animation: none;
+    }
+}
+
+/* Variant */
+.primary {
+    background: #2563eb;
+    color: #fff;
+}
+
+.secondary {
+    background: #334155;
+    color: #e5e7eb;
+    border-color: #475569;
+}
+
+.alert {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.rounded {
+    border-radius: 999px;
+}
+
+.bordered {
+    border-color: #d1d5db;
+    background: transparent;
+    color: inherit;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transition: none;
+}
+
+.disabled:hover {
+    opacity: 0.5;
+}
+
+/* Sizes */
+.small {
+    padding: 6px 10px;
+    font-size: 1.4rem;
+}
+
+.medium {
+    padding: 8px 16px;
+}
+
+.large {
+    padding: 10px 22px;
+    font-size: 1.8rem;
+}

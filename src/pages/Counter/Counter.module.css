@@ -1,0 +1,103 @@
+.wrapper {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1f2a43 0%, #1e293b 100%);
+}
+
+.counter-app {
+    background: #fff;
+    width: 560px;
+    padding: 64px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 16px;
+}
+
+.count {
+    font-size: 60px;
+    line-height: 1.1;
+    margin: 8px 0 0;
+    font-weight: 700;
+    color: gray;
+}
+
+.status {
+    font-size: 16px;
+    margin: 8px 0 32px;
+    color: gray;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: nowrap; /* keep buttons on the same line */
+}
+
+.buttons button {
+    min-width: 160px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.02s;
+    outline: none;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button.increment {
+    background: #4caf50;
+    color: #fff;
+}
+button.increment:hover {
+    background: #45a049;
+}
+
+button.decrement {
+    background: #f44336;
+    color: #fff;
+}
+button.decrement:hover {
+    background: #d32f2f;
+}
+
+button.reset {
+    background: #9e9e9e;
+    color: #fff;
+}
+button.reset:hover {
+    background: #757575;
+}
+
+.count.positive {
+    color: #4caf50;
+}
+.count.negative {
+    color: #f44336;
+}
+.count.zero {
+    color: gray;
+}
+
+.status.positive {
+    color: #4caf50;
+}
+.status.negative {
+    color: #f44336;
+}
+.status.zero {
+    color: gray;
+}
