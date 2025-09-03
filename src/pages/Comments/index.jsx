@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './Comments.module.css';
 
 function CommentLoader() {
@@ -130,5 +132,24 @@ function Comments() {
         </div>
     );
 }
+
+CommentForm.propTypes = {
+    form: PropTypes.shape({
+        name: PropTypes.string,
+        email: PropTypes.string,
+        body: PropTypes.string,
+    }),
+    handleInputChange: PropTypes.func,
+    handleSubmit: PropTypes.func,
+};
+
+CommentItem.propTypes = {
+    comment: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        email: PropTypes.string,
+        body: PropTypes.string,
+    }),
+};
 
 export default Comments;

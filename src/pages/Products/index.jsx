@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 import styles from './Products.module.css';
 
@@ -141,5 +142,14 @@ function Products() {
         </div>
     );
 }
+
+Modal.propTypes = {
+    product: PropTypes.shape({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        body: PropTypes.string,
+    }),
+    handleCloseModal: PropTypes.func,
+};
 
 export default Products;

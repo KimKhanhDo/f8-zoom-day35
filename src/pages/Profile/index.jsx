@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import styles from './Profile.module.css';
@@ -43,7 +44,7 @@ function ProfileDetail({ user }) {
                 <div className={clsx(styles.avatar)}>
                     <img
                         className={clsx(styles['avatar-img'])}
-                        src="/avatar.jpeg"
+                        src="avatar.jpeg"
                         alt={user.name}
                     />
                 </div>
@@ -113,5 +114,9 @@ function Profile() {
         </div>
     );
 }
+
+ProfileDetail.propTypes = {
+    user: PropTypes.object,
+};
 
 export default Profile;
