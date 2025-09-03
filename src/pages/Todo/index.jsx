@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './Todo.module.css';
 
 function FormInput({ inputValue, handleInputChange, handleSubmit }) {
@@ -153,5 +155,26 @@ function Todo() {
         </div>
     );
 }
+
+FormInput.propTypes = {
+    inputValue: PropTypes.string,
+    handleInputChange: PropTypes.func,
+    handleSubmit: PropTypes.func,
+};
+
+TodoItem.propTypes = {
+    todo: PropTypes.shape({
+        id: PropTypes.number,
+        text: PropTypes.string,
+        completed: PropTypes.bool,
+    }),
+    handleCheck: PropTypes.func,
+    handleDelete: PropTypes.func,
+};
+
+StatItem.propTypes = {
+    label: PropTypes.string,
+    value: PropTypes.number,
+};
 
 export default Todo;

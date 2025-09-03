@@ -118,6 +118,7 @@ function Comments() {
                     handleInputChange={handleInputChange}
                     handleSubmit={handleSubmit}
                 />
+
                 {isLoading && <CommentLoader />}
 
                 <div className={styles.comments}>

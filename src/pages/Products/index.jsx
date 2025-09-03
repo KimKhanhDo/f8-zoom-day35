@@ -143,6 +143,15 @@ function Products() {
     );
 }
 
+ProductItem.propTypes = {
+    product: PropTypes.shape({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        body: PropTypes.string,
+    }),
+    handleOpenModal: PropTypes.func,
+};
+
 Modal.propTypes = {
     product: PropTypes.shape({
         id: PropTypes.number,

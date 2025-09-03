@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './Weather.module.css';
 
 function DropDownItem({ city }) {
@@ -92,16 +94,14 @@ function Weather() {
         Promise.all(
             cities.map((city) => fetch(url(city)).then((res) => res.json()))
         ).then((results) => {
+            console.log(results);
+
             setData(results);
             if (results[0]?.id) setSelectedId(results[0].id);
         });
     }, []);
 
-    const currentCity = data.find(
-        (city) =>
-            city.id ===
-            (typeof selectedId === 'string' ? Number(selectedId) : selectedId)
-    );
+    const currentCity = data.find((city) => city.id === selectedId);
 
     const randomTemp = (temp) => temp + (Math.random() * 10 - 5);
     const randomHumidity = (humidity) =>
@@ -162,5 +162,45 @@ function Weather() {
         </div>
     );
 }
+
+DropDownItem.propTypes = {
+    city: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+    }),
+};
+
+MainDisplay.propTypes = {
+    city: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        main: PropTypes.shape({
+            temp: PropTypes.number,
+        }),
+        weather: PropTypes.arrayOf(
+            PropTypes.shape({
+                icon: PropTypes.string,
+                description: PropTypes.string,
+            })
+        ),
+    }),
+};
+
+Footer.propTypes = {
+    city: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        main: PropTypes.shape({
+            humidity: PropTypes.number,
+            temp_min: PropTypes.number,
+            temp_max: PropTypes.number,
+        }),
+        weather: PropTypes.arrayOf(
+            PropTypes.shape({
+                main: PropTypes.string,
+            })
+        ),
+    }),
+};
 
 export default Weather;
